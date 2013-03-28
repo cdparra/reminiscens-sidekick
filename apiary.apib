@@ -1,13 +1,19 @@
 HOST: http://test.reminiscens.me/api/v0
 
---- Reminiscens REST API version 0.1 ---
+--- Reminiscens RESTful Explorelife API version 0.1 ---
 ---
-Reminiscens REST API provides HTTP access to the backend of the Reminiscens applications. 
+This RESTful API provides HTTP access to resources that support Reminiscens' explorelife application, which is a tablet
+app to support elderly and their families in sharing memories and motivate conversation by exploring content related to 
+these memories' place and period of time. The goal is to stimulate a healthy practice of positive reminiscence that will 
+benefit elders' subjective wellbeing. 
 
-<h3> About Reminiscens Applications </h3>
-Reminiscens is project funded by <a href="http://www.lifeparticipation.org/">Lifeparticipation Research Group</a> at the university of Trento. 
-It is a tablet application that will allow people to share and explore their life stories along with automatically collected related stories 
-that will motivate conversation. 
+<h3> About the Reminiscens Project</h3>
+Reminiscens is a social informatics project funded by the <a href="http://www.lifeparticipation.org/">Lifeparticipation 
+Research Group</a> at the <a href="http://www.disi.unitn.it/"> University of Trento </a>. It is the result of participatory 
+research action and design with local elders, with the goal of motivating face to face social interactions between older 
+adults and their younger relatives. Not only we have worked on designing an application, but we have worked to build 
+an interesting knowledge base of content that will stimulate people to reminisce. It is work in progress, towards the 
+finalization of a Ph.D. in Information and Communication Technologies 
 ---
 
 --
@@ -304,16 +310,14 @@ POST /person/user
     "status_message":"The resource you tried to create already exists"
 }
 
-
 --
-Session Resource 
-The session resource allows the platform to manage authentication and authorization to 
-execute operations on the API. 
+Life story resource 
+The life story resource is the core element of the API. Every person has life stories to share, starting with their birth. 
 --
 -
-Create a session
+Create a story
 -
-POST /session
+POST /person/{id}/lifestory
 > Content-Type: application/json
 {  
     "api_key": "<api key for registered application>",    
@@ -382,3 +386,26 @@ POST /session
     "status_code": "52", 
     "status_message":"The resource you tried to create already exists"
 }
+
+
+
+--
+Memento resource 
+The session resource allows the platform to manage authentication and authorization to 
+execute operations on the API. 
+--
+
+
+--
+Timeline resource 
+The session resource allows the platform to manage authentication and authorization to 
+execute operations on the API. 
+--
+
+--
+Question resource 
+The session resource allows the platform to manage authentication and authorization to 
+execute operations on the API. 
+--
+
+
